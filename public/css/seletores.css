@@ -24,3 +24,86 @@
 }
 
 /** Continue aqui **/
+
+/* =============================
+   PARTE 1 — SELETORES CSS CORRETOS
+   ============================= */
+
+/* EX1 — Primeiro li, fundo amarelo */
+.content ul.demo>li.item.exemplo:first-child {
+    background-color: yellow;
+}
+
+/* EX2 — li com id="unico", texto vermelho */
+.content ul.demo>li#unico span {
+    color: red;
+}
+
+/* EX3 — li com data-type="attr", sublinhado */
+.content ul.demo>li[data-type="attr"] span {
+    text-decoration: underline;
+}
+
+/* EX4 — li com data-role~="user", itálico */
+.content ul.demo>li[data-role~="user"] span {
+    font-style: italic;
+}
+
+/* EX5 — li com texto ":first-child" (5º li), aumentar fonte */
+.content ul.demo>li:nth-child(5) span {
+    font-size: 1.2em;
+}
+
+/* EX6 — li que fala de :last-child (6º li), borda azul */
+.content ul.demo>li:nth-child(6) {
+    border: 2px solid blue;
+}
+
+/* EX7 — li com classe .ativo, fundo cinza */
+.content ul.demo>li.ativo {
+    background-color: #ccc;
+}
+
+/* EX8 — span dentro do li, negrito */
+.content ul.demo>li span {
+    font-weight: bold;
+}
+
+/* EX9 — li com classes .especial.destaque, texto MAIÚSCULAS */
+.content ul.demo>li.especial.destaque span {
+    text-transform: uppercase;
+}
+
+/* EX10 — li com lang="pt-br", texto verde */
+.content ul.demo>li[lang="pt-br"] span {
+    color: green;
+}
+
+/* EX11 — li com title começa com "começa", itálico */
+.content ul.demo>li[title^="começa"] span {
+    font-style: italic;
+}
+
+/* EX12 — li com title termina com "com", fundo rosa, mas que não comece com "começa" */
+.content ul.demo>li[title$="com"]:not([title^="começa"]) {
+    background-color: pink;
+}
+
+
+
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+        order: 2;
+    }
+
+    .content {
+        order: 1;
+    }
+}
+
